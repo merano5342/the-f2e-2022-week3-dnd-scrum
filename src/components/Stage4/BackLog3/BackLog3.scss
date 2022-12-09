@@ -1,0 +1,83 @@
+#BackLog3 {
+  .sprint-bg {
+    background-image: url('../../../assets/Attached-pic/sprint_process.png');
+    max-width: 1000px;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    margin: 0px 40px;
+  }
+
+  // .sprint-item {
+
+  .spring-title {
+    color: theme('colors.white');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    margin: 0;
+    padding: 8px 20px 16px;
+    background: theme('colors.dark60');
+    border: none;
+    outline: 4px solid theme('colors.yellow');
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+
+    font-weight: 800;
+    color: theme('colors.yellow');
+
+    p {
+      color: theme('colors.tint');
+      font-size: .8rem;
+      line-height: 1rem;
+    }
+
+    &[ data-incorrect=true] {
+    outline: 4px solid theme('colors.danger');
+    }
+  }
+
+
+  // }
+
+
+
+  .box-list {
+    margin: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top: 0;
+    right: 0;
+  }
+
+  .box-a,
+  .box-b,
+  .box-c {
+    margin: 10px;
+    padding: 1px;
+    position: absolute;
+
+    border: theme('colors.tint') dashed 2px;
+    height: 78px;
+    width: 200px;
+    border-radius: 20px;
+  }
+
+  .box-a {
+    left: 340px;
+    bottom: 200px;
+  }
+
+  .box-b {
+    right: 480px;
+    bottom: 80px;
+  }
+
+  .box-c {
+    right: 260px;
+    bottom: 80px;
+  }
+}

@@ -57,8 +57,8 @@ module.exports = {
         },
         p: {
           // fontFamily: 'cwTeXYen',
-          fontSize: '20px',
-          lineHeight: '36px',
+          fontSize: '22px',
+          lineHeight: '32px',
           fontWeight: '300',
           letterSpacing: '5%',
         },

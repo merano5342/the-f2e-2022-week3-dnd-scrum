@@ -14,7 +14,7 @@ const Entrance = (props) => {
   const { setPage } = props;
   const [enter, setEnter] = useState(false);
   const Landings = (
-    <div className=" relative z-20 ">
+    <div className="relative z-20 ">
       <div className=" flex flex-col items-center justify-center">
         <img src={BigLogo} alt="" className="z-20 max-h-[80vh]" />
         <h2 className="relative top-[-70px] z-20 text-center text-3xl text-white">
@@ -27,9 +27,9 @@ const Entrance = (props) => {
     </div>
   );
   const Intro = (
-    <div className="relative z-20 flex flex-col items-center">
-      <div className="talk talk-mm mt-[20vh] mb-10">
-        <div className="talk-title absolute">
+    <div className="dialog-po relative z-20 flex flex-col items-center">
+      <div className="talk talk-nobody mt-[20vh] mb-10">
+        <div className="talk-title">
           <h3>（謎之音）</h3>
         </div>
         <h3 className="text-white">
