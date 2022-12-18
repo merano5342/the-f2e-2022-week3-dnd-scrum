@@ -10,6 +10,7 @@ import LeafDark2 from '../../assets/bg/bg_leafDark_2_b.png';
 import LeafDark3 from '../../assets/bg/bg_leafDark_3_r.png';
 import LeafDark4 from '../../assets/bg/bg_leafDark_4_t.png';
 
+// eslint-disable-next-line no-unused-vars
 import style from './Entrance.scss';
 
 const Entrance = (props) => {

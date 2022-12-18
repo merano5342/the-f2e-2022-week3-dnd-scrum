@@ -9,7 +9,7 @@ import { s4TalkData as DATA } from './s4data';
 
 const Stage4 = (props) => {
   const { setPage } = props;
-  const [talkId, setTalkId] = useState(3);
+  const [talkId, setTalkId] = useState(0);
   const [talkContent, setTalkContent] = useState(DATA[0]);
   const [disableNextBtn, setDisableNextBtn] = useState(false);
 

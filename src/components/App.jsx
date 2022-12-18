@@ -14,7 +14,7 @@ import Stage5 from './Stage5';
 import Final from './Final';
 
 const App = () => {
-  const [page, setPage] = useState(4);
+  const [page, setPage] = useState(0);
   return (
     <div className="app">
       {page === 0 && <Entrance setPage={setPage} />}
