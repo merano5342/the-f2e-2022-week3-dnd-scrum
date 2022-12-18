@@ -9,9 +9,15 @@ import { s4TalkData as DATA } from './s4data';
 
 const Stage4 = (props) => {
   const { setPage } = props;
-  const [talkId, setTalkId] = useState(0);
+  const [talkId, setTalkId] = useState(3);
   const [talkContent, setTalkContent] = useState(DATA[0]);
   const [disableNextBtn, setDisableNextBtn] = useState(false);
+
+  const handelOnClick = () => {
+    if (!disableNextBtn) {
+      setTalkId((pre) => pre + 1);
+    }
+  };
 
   useEffect(() => {
     setTalkContent(DATA[talkId]);
@@ -21,9 +27,8 @@ const Stage4 = (props) => {
   }, [talkId]);
 
   return (
-    <div className="background2">
+    <div className="background2" onClick={handelOnClick}>
       <div className="flex flex-col justify-between">
-        {/* onClick={() => setTalkId((pre) => pre + 1)} */}
         <CharacterTalk
           setTalkId={setTalkId}
           talkContent={talkContent}

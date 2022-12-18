@@ -16,7 +16,7 @@ import GgCharaLight from '../../assets/role/role_team2_light.png';
 import gifGg from '../../assets/gif/ic_continue_team2.gif';
 
 const CharacterTalk = (props) => {
-  const { setTalkId, talkContent, disableNextBtn } = props;
+  const { talkContent, disableNextBtn } = props;
 
   const btnArr = { po: gifPo, mm: gifMm, ee: gifEe, gg: gifGg };
 
@@ -31,13 +31,16 @@ const CharacterTalk = (props) => {
     const charaBtnPath = btnArr[talkContent.takingPerson];
     return <img src={charaBtnPath} alt="" className="h-6" />;
   };
+
   const poCharacter = () => {
     if (isCharaShow('po')) {
       return (
-        <div className="chara">
-          <img src={Hole} alt="" className="" />
-          <img src={PoCharaLight} alt="" className="top-2" />
-          <img src={PoChara} alt="" className="" />
+        <div className="chara ">
+          <img src={Hole} alt="" className="hole" />
+          <div className="chara-down">
+            <img src={PoCharaLight} alt="" className="top-2" />
+            <img src={PoChara} alt="" className="" />
+          </div>
         </div>
       );
     }
@@ -46,10 +49,12 @@ const CharacterTalk = (props) => {
   const mmCharacter = () => {
     if (isCharaShow('mm')) {
       return (
-        <div className="chara">
-          <img src={Hole} alt="" className="bottom-0" />
-          <img src={MmCharaLight} alt="" className="bottom-4" />
-          <img src={MmChara} alt="" className="" />
+        <div className="chara bottom-6">
+          <img src={Hole} alt="" className="hole bottom-0" />
+          <div className="chara-up">
+            <img src={MmCharaLight} alt="" className="bottom-2" />
+            <img src={MmChara} alt="" className="bottom-4" />
+          </div>
         </div>
       );
     }
@@ -60,9 +65,11 @@ const CharacterTalk = (props) => {
     if (isCharaShow('ee')) {
       return (
         <div className="chara">
-          <img src={Hole} alt="" className="" />
-          <img src={EeCharaLight} alt="" className="top-2" />
-          <img src={EeChara} alt="" className="" />
+          <img src={Hole} alt="" className="hole" />
+          <div className="chara-down">
+            <img src={EeCharaLight} alt="" className="top-2" />
+            <img src={EeChara} alt="" className="" />
+          </div>
         </div>
       );
     }
@@ -73,8 +80,10 @@ const CharacterTalk = (props) => {
       return (
         <div className="chara">
           <img src={Hole} alt="" className="" />
-          <img src={GgCharaLight} alt="" className="top-2" />
-          <img src={GgChara} alt="" className="" />
+          <div className="chara-down">
+            <img src={GgCharaLight} alt="" className="top-2" />
+            <img src={GgChara} alt="" className="" />
+          </div>
         </div>
       );
     }
@@ -84,18 +93,16 @@ const CharacterTalk = (props) => {
   const talkBox = (
     <div className="talk" key={talkContent.id}>
       <h3 className="talk-title">{talkContent.takingPerson}</h3>
-      {talkContent.content}
+      <div className="talk-box">{talkContent.content}</div>
+
       {!disableNextBtn && (
-        <button
-          key={talkContent.id}
-          onClick={() => setTalkId((pre) => pre + 1)}
-          className="absolute bottom-8 right-12 "
-        >
+        <button key={talkContent.id} className="absolute bottom-8 right-12 ">
           {talkingBtn()}
         </button>
       )}
     </div>
   );
+
   const imgBox = (
     <div className="img-container m-4 flex items-center justify-center">
       {talkContent.image}
@@ -103,8 +110,8 @@ const CharacterTalk = (props) => {
   );
 
   return (
+    // 顯示相對應角色對話框顏色
     <div className={`dialog dialog-${talkContent.takingPerson} flex flex-col`}>
-      {/* <div className="top-0 right-0 m-6 flex justify-end gap-4"> */}
       <div
         className="chara-box top-0 right-0 m-6 flex justify-end gap-4"
         data-chara={isCharaTaking('ee') || isCharaTaking('gg')}

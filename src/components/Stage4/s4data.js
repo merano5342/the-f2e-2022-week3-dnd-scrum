@@ -3,8 +3,6 @@ import sprint1 from '../../assets/Attached-pic/sprint_daily.png';
 import sprint2 from '../../assets/Attached-pic/sprint_review.png';
 import sprint3 from '../../assets/Attached-pic/sprint_retro.png';
 
-import sprintBG from '../../assets/Attached-pic/sprint_process.png';
-
 const sprintIntro = [
   {
     id: 'a',

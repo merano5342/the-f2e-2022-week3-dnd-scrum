@@ -1,21 +1,5 @@
 import JiraLogo from '../../assets/logo/jira_w.png';
 
-// const arrowDownBtn = (
-//   <img
-//     src={require('../../assets/gif/ic_continue_po.gif')}
-//     alt=""
-//     className=" absolute bottom-12 right-14 h-6"
-//   />
-// );
-
-const textBtn = (str) => {
-  return (
-    <div className="h-14">
-      <div className="btn absolute bottom-8 right-10">{str}</div>
-    </div>
-  );
-};
-
 export const s1TalkData = [
   {
     id: 0,

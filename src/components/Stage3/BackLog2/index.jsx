@@ -7,7 +7,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import Boxes from './Boxes';
 
 const BackLog2 = (props) => {
-  const { setTalkId, talkId, disableNextBtn } = props;
+  const { setTalkId, talkId } = props;
   const [doneBtnActive, setDoneBtnActive] = useState(false);
   const [listCorrection, setListCorrection] = useState(false);
   const [totalPoints, setTotalPoints] = useState(0);
@@ -89,6 +89,8 @@ const BackLog2 = (props) => {
   useEffect(() => {
     if (list.B.item.length >= 2) {
       setDoneBtnActive(true);
+    } else {
+      setDoneBtnActive(false);
     }
     setTotalPoints(onCountPoints(list.B));
     setListCorrection(onPointsCorrection(totalPoints));
@@ -122,7 +124,7 @@ const BackLog2 = (props) => {
           })}
         </main>
       </DragDropContext>
-      {talkId === 0 && doneBtn(doneBtnActive)}
+      {(talkId === 0 || talkId === 1) && doneBtn(doneBtnActive)}
     </div>
   );
 };

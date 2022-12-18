@@ -24,14 +24,14 @@ const BackLog1 = (props) => {
   const [containers, setContainers] = useState({
     A: [
       {
-        priority: 2,
+        priority: 3,
         key: nanoid(),
         content: <div className="mt-2">應徵者的線上履歷編輯器</div>,
       },
     ],
     B: [
       {
-        priority: 4,
+        priority: 1,
         key: nanoid(),
         content: (
           <div className="">
@@ -43,7 +43,7 @@ const BackLog1 = (props) => {
     ],
     C: [
       {
-        priority: 1,
+        priority: 2,
         key: nanoid(),
         content: (
           <div className="">
@@ -54,29 +54,35 @@ const BackLog1 = (props) => {
     ],
     D: [
       {
-        priority: 3,
+        priority: 4,
         key: nanoid(),
         content: <div className="mt-2">前台職缺列表、應徵</div>,
       },
     ],
-    E: [],
+    list: [],
   });
 
   useEffect(() => {
-    if (containers.E.length === 4) {
+    if (containers.list.length === 4) {
       setDoneBtnActive(true);
     }
-  }, [containers]);
+    const listCorrection = () => {
+      const currentList = containers.list.map((item) => item.priority);
+      const correctList = [...Array(4).keys()].map((pre) => pre + 1);
 
-  // useEffect(() => {
-  //   listCorrection ? setTalkId(4) : setTalkId(4.1)
-  // }, [listCorrection])
+      const correctBoolean = !!(
+        correctList.length === 4 && currentList.join('') === correctList.join('')
+      );
+      return correctBoolean;
+    };
+    setListCorrection(listCorrection);
+  }, [containers]);
 
   const boxKeys = Object.keys(containers);
 
   const onDragEnd = (result) => {
     const { destination, source } = result;
-    if (!destination || destination.droppableId !== 'E') return;
+    if (!destination || destination.droppableId !== 'list') return;
 
     if (
       source.droppableId === destination.droppableId &&
@@ -100,7 +106,6 @@ const BackLog1 = (props) => {
     if (source.droppableId !== destination.droppableId) {
       const fromItems = [...containers[source.droppableId]];
       const toItems = [...containers[destination.droppableId]];
-      console.log(fromItems, toItems);
       toItems.splice(destination.index, 0, fromItems[source.index]);
       fromItems.splice(source.index, 1);
 
@@ -110,16 +115,6 @@ const BackLog1 = (props) => {
         [destination.droppableId]: toItems,
       });
     }
-    const listCorrection = () => {
-      const currentList = containers.E.map((item) => item.priority);
-      const correctList = [...Array(4).keys()].map((pre) => pre + 1);
-
-      const correctBoolean = !!(
-        correctList.length === 4 && currentList.join('') === correctList.join('')
-      );
-      return correctBoolean;
-    };
-    setListCorrection(listCorrection);
   };
 
   const handleCheckCorrection = () => {
@@ -128,6 +123,7 @@ const BackLog1 = (props) => {
   };
   const onDoneBtnShow = (talkId) => {
     if (talkId >= 3 && talkId < 5) return true;
+    return false;
   };
   const doneBtn = (boolean) => (
     <button

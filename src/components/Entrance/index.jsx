@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import BigLogo from '../assets/logo/logo.png';
-import LeafTint1 from '../assets/bg/bg_leafTint_1_lt.png';
-import LeafTint2 from '../assets/bg/bg_leafTint_2_lb.png';
-import LeafTint3 from '../assets/bg/bg_leafTint_3_t.png';
-import LeafTint4 from '../assets/bg/bg_leafTint_4_rb.png';
+import BigLogo from '../../assets/logo/logo.png';
+import LeafTint1 from '../../assets/bg/bg_leafTint_1_lt.png';
+import LeafTint2 from '../../assets/bg/bg_leafTint_2_lb.png';
+import LeafTint3 from '../../assets/bg/bg_leafTint_3_t.png';
+import LeafTint4 from '../../assets/bg/bg_leafTint_4_rb.png';
 
-import LeafDark1 from '../assets/bg/bg_leafDark_1_l.png';
-import LeafDark2 from '../assets/bg/bg_leafDark_2_b.png';
-import LeafDark3 from '../assets/bg/bg_leafDark_3_r.png';
-import LeafDark4 from '../assets/bg/bg_leafDark_4_t.png';
+import LeafDark1 from '../../assets/bg/bg_leafDark_1_l.png';
+import LeafDark2 from '../../assets/bg/bg_leafDark_2_b.png';
+import LeafDark3 from '../../assets/bg/bg_leafDark_3_r.png';
+import LeafDark4 from '../../assets/bg/bg_leafDark_4_t.png';
+
+import style from './Entrance.scss';
 
 const Entrance = (props) => {
   const { setPage } = props;
@@ -28,17 +30,15 @@ const Entrance = (props) => {
   );
   const Intro = (
     <div className="dialog-po relative z-20 flex flex-col items-center">
-      <div className="talk talk-nobody mt-[20vh] mb-10">
-        <div className="talk-title">
-          <h3>（謎之音）</h3>
-        </div>
-        <h3 className="text-white">
+      <div className="talk-nobody talk mx-10 mt-[20vh] mb-10">
+        <h3 className="talk-title">（謎之音）</h3>
+        <div className="talk-box text-2xl text-white">
           呦呼，歡迎進入<span className="highlight">「SCRUM 新手村」</span>
           ，在正式加入專案開發之前，需要請你先了解 Scrum 的流程與精神！
           <br />
           <br />
           請接受挑戰任務，成功通過 Scrum 新手村的挑戰任務吧～
-        </h3>
+        </div>
       </div>
       <button className="btn" onClick={() => setPage(1)}>
         接受挑戰

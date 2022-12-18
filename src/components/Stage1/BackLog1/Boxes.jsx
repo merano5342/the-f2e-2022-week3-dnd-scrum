@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Droppable, Draggable } from 'react-beautiful-dnd';
+// eslint-disable-next-line no-unused-vars
 import style from './Backlog1.scss';
 
 const boxArr = {
@@ -7,11 +8,11 @@ const boxArr = {
   B: 'box-b',
   C: 'box-c',
   D: 'box-d',
-  E: 'green-backlog',
+  list: 'green-backlog',
 };
 
 const Items = (props) => {
-  const { item, i } = props;
+  const { item, i, x } = props;
   return (
     <div key={item.key}>
       <Draggable draggableId={item.key} index={i}>
@@ -21,6 +22,7 @@ const Items = (props) => {
             {...provided.dragHandleProps}
             ref={provided.innerRef}
             className="item"
+            data-correct={x !== 'list' || item.priority === i + 1}
           >
             {item.content}
           </div>
@@ -34,7 +36,7 @@ const Boxes = (props) => {
   const { x, containers } = props;
 
   const isBacklog = (boxX) => {
-    return boxX === 'E';
+    return boxX === 'list';
   };
 
   const getBackLogStyle = () => {
@@ -95,7 +97,7 @@ const Boxes = (props) => {
               >
                 {itemBox(x)}
                 {containers[x].map((item, i) => (
-                  <Items item={item} i={i} provided={provided} key={item.key} />
+                  <Items item={item} i={i} x={x} key={item.key} />
                 ))}
                 {provided.placeholder}
               </div>

@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Droppable, Draggable } from 'react-beautiful-dnd';
+// eslint-disable-next-line no-unused-vars
 import style from './BackLog2.scss';
 
 const Items = (props) => {

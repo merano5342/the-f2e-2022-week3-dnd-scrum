@@ -1,5 +1,7 @@
 // backlog
 #backlog1 {
+
+
   .green-backlog {
     position: relative;
     z-index: 1;
@@ -108,7 +110,12 @@
 
     border: 4px solid theme('colors.tint');
     border-radius: 20px;
+
+    &[data-correct=false] {
+      border: 4px solid theme('colors.danger');
+    }
   }
+
 
   .box-a {
     position: absolute;

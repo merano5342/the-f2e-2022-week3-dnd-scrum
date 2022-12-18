@@ -15,6 +15,11 @@ const Stage1 = (props) => {
   const [talkContent, setTalkContent] = useState(DATA[0]);
   const [disableNextBtn, setDisableNextBtn] = useState(false);
 
+  const handelOnClick = () => {
+    if (!disableNextBtn) {
+      setTalkId((pre) => pre + 1);
+    }
+  };
   useEffect(() => {
     setTalkContent(DATA[talkId]);
     if (talkId === 3 || talkId === 4) {
@@ -23,7 +28,7 @@ const Stage1 = (props) => {
   }, [talkId]);
 
   return (
-    <div className="background2">
+    <div className="background2" onClick={handelOnClick}>
       <div className="flex flex-col justify-between">
         {/* onClick={() => setTalkId((pre) => pre + 1)} */}
         <CharacterTalk

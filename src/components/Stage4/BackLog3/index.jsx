@@ -3,9 +3,32 @@
 import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { DragDropContext } from 'react-beautiful-dnd';
+// eslint-disable-next-line no-unused-vars
 import style from './BackLog3.scss';
 
 import Boxes from './Boxes';
+
+const DATA_LIST = [
+  { id: 'list-a', title: '產品待辦清單', titleEN: 'Product Backlog' },
+  { id: 'list-b', title: '短衝計畫會議', titleEN: 'Sprint Planning' },
+  { id: 'list-c', title: '短衝待辦清單', titleEN: 'Sprint Backlog' },
+  { id: 'list-d', title: '短衝', titleEN: 'Sprint' },
+];
+
+const ListItem = () => {
+  return (
+    <div className="list-item bg-darkTint">
+      {DATA_LIST.map((item) => {
+        return (
+          <div className={item.id} key={item.id}>
+            <h2 className="text-2xl">{item.title}</h2>
+            <p>{item.titleEN}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 const BackLog3 = (props) => {
   const { talkId, setTalkId } = props;
@@ -41,30 +64,19 @@ const BackLog3 = (props) => {
     C: [],
   });
 
+  const onListCorrection = (containers) => {
+    const currentArr = [
+      ...Object.values(containers).map((arr) => (arr.length ? arr[0].ansBox : '0')),
+    ];
+    const ansArr = ['0', 'A', 'B', 'C'];
+    const correctBoolean = !!(currentArr.join('') === ansArr.join(''));
+    return correctBoolean;
+  };
+
   useEffect(() => {
     if (containers.list.length === 0) {
       setDoneBtnActive(true);
-      // const onAns = (object) => {
-      //   return Object.keys(object).map((key) => {
-      //     if (object[key].length > 0) {
-      //       console.log(object[key][0].ansBox, key);
-      //       return object[key][0].ansBox === key;
-      //     }
-      //     return '';
-      //   });
-      // };
-
-      // console.log(onAns(containers));
-
-      const onListCorrection = () => {
-        const currentArr = [
-          ...Object.values(containers).map((arr) => (arr.length ? arr[0].ansBox : '0')),
-        ];
-        const ansArr = ['0', 'A', 'B', 'C'];
-        const correctBoolean = !!(currentArr.join('') === ansArr.join(''));
-        return correctBoolean;
-      };
-      setListCorrection(onListCorrection);
+      setListCorrection(onListCorrection(containers));
     }
   }, [containers]);
 
@@ -72,7 +84,6 @@ const BackLog3 = (props) => {
 
   const onDragEnd = (result) => {
     const { destination, source } = result;
-    console.log(destination.droppableId, source.droppableId);
 
     if (!destination) return '';
 
@@ -103,6 +114,7 @@ const BackLog3 = (props) => {
         [destination.droppableId]: toList,
       });
     }
+    return null;
   };
   const handleCheckCorrection = () => {
     setDoneBtnActive(false);
@@ -110,6 +122,7 @@ const BackLog3 = (props) => {
   };
   const onDoneBtnShow = (talkId) => {
     if (talkId >= 3 && talkId < 5) return true;
+    return false;
   };
   const doneBtn = (boolean) => (
     <button
@@ -129,6 +142,7 @@ const BackLog3 = (props) => {
           {containersKeys.map((x) => (
             <Boxes x={x} containers={containers} key={x} />
           ))}
+          <ListItem />
         </main>
       </DragDropContext>
       {onDoneBtnShow(talkId) && doneBtn(doneBtnActive)}
