@@ -26,7 +26,8 @@ const Stage3 = (props) => {
   }, [talkId]);
 
   return (
-    <div className="background2" onClick={handelOnClick}>
+    <div className="background2 " onClick={handelOnClick}>
+      {!disableNextBtn && <div className="continue-btn">點擊畫面任意處繼續</div>}
       <div className="flex flex-col justify-between">
         <CharacterTalk
           setTalkId={setTalkId}

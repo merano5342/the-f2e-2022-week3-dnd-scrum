@@ -38,7 +38,7 @@ const CharacterTalk = (props) => {
         <div className="chara ">
           <img src={Hole} alt="" className="hole" />
           <div className="chara-down">
-            <img src={PoCharaLight} alt="" className="top-2" />
+            <img src={PoCharaLight} alt="" className="chara-light top-2" />
             <img src={PoChara} alt="" className="" />
           </div>
         </div>
@@ -52,7 +52,7 @@ const CharacterTalk = (props) => {
         <div className="chara bottom-6">
           <img src={Hole} alt="" className="hole bottom-0" />
           <div className="chara-up">
-            <img src={MmCharaLight} alt="" className="bottom-2" />
+            <img src={MmCharaLight} alt="" className="chara-light2 bottom-2" />
             <img src={MmChara} alt="" className="bottom-4" />
           </div>
         </div>
@@ -67,7 +67,7 @@ const CharacterTalk = (props) => {
         <div className="chara">
           <img src={Hole} alt="" className="hole" />
           <div className="chara-down">
-            <img src={EeCharaLight} alt="" className="top-2" />
+            <img src={EeCharaLight} alt="" className="chara-light top-2" />
             <img src={EeChara} alt="" className="" />
           </div>
         </div>
@@ -81,7 +81,7 @@ const CharacterTalk = (props) => {
         <div className="chara">
           <img src={Hole} alt="" className="" />
           <div className="chara-down">
-            <img src={GgCharaLight} alt="" className="top-2" />
+            <img src={GgCharaLight} alt="" className="chara-light top-2" />
             <img src={GgChara} alt="" className="" />
           </div>
         </div>

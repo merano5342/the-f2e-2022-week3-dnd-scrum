@@ -14,6 +14,8 @@ const Stage1 = (props) => {
   const [talkId, setTalkId] = useState(0);
   const [talkContent, setTalkContent] = useState(DATA[0]);
   const [disableNextBtn, setDisableNextBtn] = useState(false);
+  const [continueBtn, setContinueBtn] = useState(false);
+  const [backlogShow, setBacklogShow] = useState(false);
 
   const handelOnClick = () => {
     if (!disableNextBtn) {
@@ -25,21 +27,32 @@ const Stage1 = (props) => {
     if (talkId === 3 || talkId === 4) {
       setDisableNextBtn(true);
     }
+    if (talkId > 1) {
+      setBacklogShow(true);
+    }
+    if (talkId === 5) {
+      setContinueBtn(true);
+    }
   }, [talkId]);
 
   return (
     <div className="background2" onClick={handelOnClick}>
-      <div className="flex flex-col justify-between">
-        {/* onClick={() => setTalkId((pre) => pre + 1)} */}
-        <CharacterTalk
-          setTalkId={setTalkId}
-          talkContent={talkContent}
-          disableNextBtn={disableNextBtn}
-        />
-      </div>
+      <div className="finished" data-active={continueBtn}>
+        <div className=" flex w-full flex-col justify-between">
+          {!disableNextBtn && talkId !== 2 && (
+            <div className="continue-btn">點擊畫面任意處繼續</div>
+          )}
 
-      {talkId > 1 && <BackLog1 talkId={talkId} setTalkId={setTalkId} />}
-      {talkId === 5 && <TextBtn str="繼續" onClick={() => setPage((pre) => pre + 1)} />}
+          <CharacterTalk
+            setTalkId={setTalkId}
+            talkContent={talkContent}
+            disableNextBtn={disableNextBtn}
+          />
+        </div>
+
+        {backlogShow && <BackLog1 talkId={talkId} setTalkId={setTalkId} />}
+        {continueBtn && <TextBtn str="繼續" onClick={() => setPage((pre) => pre + 1)} />}
+      </div>
     </div>
   );
 };

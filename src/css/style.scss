@@ -31,6 +31,8 @@ body {
 
 .background2 {
   background-image: url(../assets/bg/bg_village2.png);
+
+
 }
 
 
@@ -39,9 +41,27 @@ body {
   backdrop-filter: blur(5px);
 }
 
-.finished {
-  background: linear-gradient(180deg, rgba(0, 255, 224, 0) 0%, rgba(0, 255, 224, 0.25) 60.42%, rgba(0, 255, 224, 0.45) 79.69%, rgba(0, 255, 224, 0.7) 91.67%, rgba(0, 255, 224, 0.9) 100%);
+.continue-btn {
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  z-index: 100;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: theme('colors.tint');
+  border: theme('colors.tint') 2px solid;
+  border-radius: 40px;
+
 }
+
+// .finished[data-active=true] {
+//   position: absolute;
+//   z-index: 100;
+//   border-color: #008D96 1px solid;
+//   height: 100%;
+//   width: 100%;
+//   background: linear-gradient(180deg, rgba(0, 255, 224, 0) 0%, rgba(0, 255, 224, 0.25) 60.42%, rgba(0, 255, 224, 0.45) 79.69%, rgba(0, 255, 224, 0.7) 91.67%, rgba(0, 255, 224, 0.9) 100%);
+// }
 
 .btn {
   // position: relative;
@@ -99,6 +119,23 @@ body {
   }
 
   to {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+
+@keyframes lightScale {
+  0% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+
+  30% {
+    transform: scale(.9);
+    opacity: 80%;
+  }
+
+  100% {
     transform: scale(1);
     opacity: 100%;
   }
@@ -298,6 +335,17 @@ body {
     position: absolute;
   }
 
+  .chara-light {
+    animation: lightScale 2s infinite;
+    transform-origin: top center;
+    transform: scale(1, 1);
+  }
+
+  .chara-light2 {
+    animation: lightScale 2s infinite;
+    transform-origin: bottom center;
+    transform: scale(1, 1);
+  }
 
   .hole {
     display: flex;

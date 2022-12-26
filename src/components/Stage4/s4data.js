@@ -63,7 +63,8 @@ export const s4TalkData = [
       </p>
     ),
     button: '',
-    image: '',
+
+    image: <div className="continue-btn">點擊畫面任意處繼續</div>,
     // action: '() => setTalkId((pre) => pre + 1)',
   },
   {

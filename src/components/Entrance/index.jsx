@@ -19,7 +19,7 @@ const Entrance = (props) => {
   const Landings = (
     <div className="relative z-20 ">
       <div className=" flex flex-col items-center justify-center">
-        <img src={BigLogo} alt="" className="z-20 max-h-[80vh]" />
+        <img src={BigLogo} alt="" className="logo z-20 max-h-[80vh]" />
         <h2 className="relative top-[-70px] z-20 text-center text-3xl text-white">
           深入敏捷の村一探究竟
         </h2>
@@ -51,16 +51,36 @@ const Entrance = (props) => {
       <div className="entrance">
         {enter ? Intro : Landings}
         <div className="z-0 h-full">
-          <img src={LeafDark1} alt="" className="absolute left-0 bottom-0" />
-          <img src={LeafDark2} alt="" className="absolute bottom-0" />
-          <img src={LeafDark3} alt="" className="absolute right-0 top-0" />
-          <img src={LeafDark4} alt="" className="absolute top-0 " />
+          <img
+            src={LeafDark1}
+            alt=""
+            className="leaf1 absolute left-[-5px] bottom-[-5px]"
+          />
+          <img src={LeafDark2} alt="" className="leaf2 absolute bottom-[-5px]" />
+          <img
+            src={LeafDark3}
+            alt=""
+            className="leaf1 absolute right-[-5px] top-[-5px]"
+          />
+          <img src={LeafDark4} alt="" className="leaf2 absolute top-[-5px] " />
           {!enter && (
             <div className="">
-              <img src={LeafTint1} alt="" className="absolute left-0 top-0" />
-              <img src={LeafTint2} alt="" className="absolute bottom-0 left-0" />
-              <img src={LeafTint3} alt="" className="absolute top-0" />
-              <img src={LeafTint4} alt="" className="absolute bottom-0 right-0" />
+              <img
+                src={LeafTint1}
+                alt=""
+                className="leaf1 absolute left-[-5px] top-[-5px]"
+              />
+              <img
+                src={LeafTint2}
+                alt=""
+                className="leaf2 absolute bottom-[-5px] left-[-5px]"
+              />
+              <img src={LeafTint3} alt="" className="leaf1 absolute top-[-5px]" />
+              <img
+                src={LeafTint4}
+                alt=""
+                className="leaf2 absolute bottom-[-5px] right-[-5px]"
+              />
             </div>
           )}
         </div>
