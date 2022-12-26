@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/the-f2e-2022-week3-dnd-scrum/static/css/main.1e19b33a.css",
-    "main.js": "/the-f2e-2022-week3-dnd-scrum/static/js/main.5c486cd0.js",
+    "main.css": "/the-f2e-2022-week3-dnd-scrum/static/css/main.bfd41a9c.css",
+    "main.js": "/the-f2e-2022-week3-dnd-scrum/static/js/main.64d9036d.js",
     "static/media/bg_village2.png": "/the-f2e-2022-week3-dnd-scrum/static/media/bg_village2.6705c0de2e7b60a9db3d.png",
     "static/media/logo_txt.png": "/the-f2e-2022-week3-dnd-scrum/static/media/logo_txt.6bfee4824abe58589805.png",
     "static/media/logo.png": "/the-f2e-2022-week3-dnd-scrum/static/media/logo.26c36dcbfefda0e77d2e.png",
@@ -48,11 +48,11 @@
     "static/media/story.png": "/the-f2e-2022-week3-dnd-scrum/static/media/story.3b05de46fa744e0a52dc.png",
     "static/media/story_13.png": "/the-f2e-2022-week3-dnd-scrum/static/media/story_13.5248a2b39418f835ff07.png",
     "index.html": "/the-f2e-2022-week3-dnd-scrum/index.html",
-    "main.1e19b33a.css.map": "/the-f2e-2022-week3-dnd-scrum/static/css/main.1e19b33a.css.map",
-    "main.5c486cd0.js.map": "/the-f2e-2022-week3-dnd-scrum/static/js/main.5c486cd0.js.map"
+    "main.bfd41a9c.css.map": "/the-f2e-2022-week3-dnd-scrum/static/css/main.bfd41a9c.css.map",
+    "main.64d9036d.js.map": "/the-f2e-2022-week3-dnd-scrum/static/js/main.64d9036d.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e19b33a.css",
-    "static/js/main.5c486cd0.js"
+    "static/css/main.bfd41a9c.css",
+    "static/js/main.64d9036d.js"
   ]
 }
