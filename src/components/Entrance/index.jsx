@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
 import BigLogo from '../../assets/logo/logo.png';
 import LeafTint1 from '../../assets/bg/bg_leafTint_1_lt.png';
 import LeafTint2 from '../../assets/bg/bg_leafTint_2_lb.png';
@@ -16,6 +17,25 @@ import style from './Entrance.scss';
 const Entrance = (props) => {
   const { setPage } = props;
   const [enter, setEnter] = useState(false);
+
+  useEffect(() => {
+    const imageList = [
+      BigLogo,
+      LeafTint1,
+      LeafTint1,
+      LeafTint2,
+      LeafTint3,
+      LeafTint4,
+      LeafDark1,
+      LeafDark2,
+      LeafDark3,
+      LeafDark4,
+    ];
+    imageList.forEach((image) => {
+      new Image().src = image;
+    });
+  }, []);
+
   const Landings = (
     <div className="relative z-20 ">
       <div className=" flex flex-col items-center justify-center">
