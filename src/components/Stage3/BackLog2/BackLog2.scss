@@ -4,7 +4,7 @@
   .orange-backlog {
     position: relative;
     width: 360px;
-    height: 58vh;
+    max-height: 450px;
     border-radius: 20px;
     margin-right: 10px;
 
@@ -15,7 +15,7 @@
       top: 12px;
       left: 12px;
       width: 360px;
-      height: 58vh;
+      max-height: 450px;
 
 
       border-radius: 20px;
@@ -43,7 +43,7 @@
       z-index: 2;
       position: absolute;
       width: 360px;
-      height: 58vh;
+      max-height: 450px;
       border-radius: 20px;
       top: 0;
 
@@ -67,7 +67,7 @@
       z-index: 1;
       position: absolute;
       width: 360px;
-      height: 58vh;
+      max-height: 450px;
 
       backdrop-filter: blur(5px);
 
@@ -80,7 +80,7 @@
         content: '';
         position: absolute;
         width: 360px;
-        height: 58vh;
+        max-height: 450px;
         opacity: 0.9;
       }
     }

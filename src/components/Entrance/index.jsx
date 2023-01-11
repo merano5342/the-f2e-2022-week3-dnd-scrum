@@ -49,7 +49,7 @@ const Landings = (props) => {
   return (
     <div className="relative z-20 ">
       <div className=" flex flex-col items-center justify-center">
-        <img src={BigLogo} alt="" className="logo z-20 max-h-[80vh]" />
+        <img src={BigLogo} alt="" className="logo z-20 max-h-[600px]" />
         <h2 className="relative top-[-70px] z-20 text-center text-3xl text-white">
           深入敏捷の村一探究竟
         </h2>
@@ -76,6 +76,7 @@ const Entrance = (props) => {
       window.addEventListener('load', onPageLoad);
       return () => window.removeEventListener('load', onPageLoad);
     }
+    return null;
   }, []);
 
   return (

@@ -127,7 +127,7 @@ const BackLog1 = (props) => {
   };
   const doneBtn = (boolean) => (
     <button
-      className="btn fixed right-[40px] bottom-[70px]"
+      className="btn absolute bottom-10 right-8"
       data-active={boolean}
       onClick={handleCheckCorrection}
     >
