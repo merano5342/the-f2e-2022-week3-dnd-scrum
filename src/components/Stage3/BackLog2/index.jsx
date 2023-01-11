@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 import Boxes from './Boxes';
+import TextBtn from '../../unit/TextBtn';
 
 const BackLog2 = (props) => {
   const { setTalkId, talkId } = props;
@@ -102,30 +103,27 @@ const BackLog2 = (props) => {
     return listCorrection ? setTalkId(2) : setTalkId(1);
   };
 
-  const doneBtn = (boolean) => (
-    <button
-      className="btn absolute bottom-14 right-10"
-      data-active={boolean}
-      onClick={handleCheckCorrection}
-      disabled={!boolean}
-    >
-      開始 Sprint
-    </button>
-  );
-
   const listKey = ['A', 'B'];
   return (
-    <div className="relative" id="backlog2">
-      <DragDropContext onDragEnd={onDragEnd}>
-        <main className="mx-6 flex h-[500px]">
-          {/* 外盒們 */}
-          {listKey.map((x) => {
-            return <Boxes list={list} x={x} totalPoints={totalPoints} key={x} />;
-          })}
-        </main>
-      </DragDropContext>
-      {(talkId === 0 || talkId === 1) && doneBtn(doneBtnActive)}
-    </div>
+    <>
+      <div className="relative" id="backlog2">
+        <DragDropContext onDragEnd={onDragEnd}>
+          <main className="mx-6 flex h-[500px]">
+            {/* 外盒們 */}
+            {listKey.map((x) => {
+              return <Boxes list={list} x={x} totalPoints={totalPoints} key={x} />;
+            })}
+          </main>
+        </DragDropContext>
+      </div>
+      {(talkId === 0 || talkId === 1) && (
+        <TextBtn
+          str="開始 Sprint"
+          onClick={handleCheckCorrection}
+          active={doneBtnActive}
+        />
+      )}
+    </>
   );
 };
 

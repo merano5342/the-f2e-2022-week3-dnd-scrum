@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { PoCharacter, MmCharacter, EeCharacter, GgCharacter } from '../unit/Character';
+import TextBtn from '../unit/TextBtn';
 
 const retroRadioDATA = {
   Q1: {
@@ -103,22 +104,12 @@ const RetroRadio = (props) => {
       const boo = group.options
         .map((item) => item.value === item.ansValue)
         .reduce((pre, cur) => pre && cur);
-      // console.log(group, boo);
       return boo;
     });
     const doneBoo = booArr.reduce((pre, cur) => pre && cur);
     setDoneBtnActive(doneBoo);
   }, [radio]);
-  const doneBtn = (boolean) => (
-    <button
-      className="btn fixed right-[40px] bottom-[70px]"
-      data-active={boolean}
-      onClick={() => setTalkId((pre) => pre + 1)}
-      disabled={!boolean}
-    >
-      我選好了
-    </button>
-  );
+
   return (
     <div className="mx-10 flex max-w-[900px] justify-start gap-10">
       {Object.values(radio).map((group) => {
@@ -141,7 +132,13 @@ const RetroRadio = (props) => {
           </div>
         );
       })}
-      {talkId === 1 && doneBtn(doneBtnActive)}
+      {talkId === 1 && (
+        <TextBtn
+          str="我選好了"
+          onClick={() => setTalkId((pre) => pre + 1)}
+          active={doneBtnActive}
+        />
+      )}
     </div>
   );
 };

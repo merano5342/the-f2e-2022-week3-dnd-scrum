@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 import Boxes from './Boxes';
+import TextBtn from '../../unit/TextBtn';
 
 const reOrder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -125,35 +126,30 @@ const BackLog1 = (props) => {
     if (talkId >= 3 && talkId < 5) return true;
     return false;
   };
-  const doneBtn = (boolean) => (
-    <button
-      className="btn absolute bottom-10 right-8"
-      data-active={boolean}
-      onClick={handleCheckCorrection}
-    >
-      我完成了
-    </button>
-  );
 
   return (
-    <div className="relative mx-auto" id="backlog1">
-      <DragDropContext onDragEnd={onDragEnd}>
-        <main className="flex h-[500px] justify-center">
-          {/* 外盒們 */}
-          {boxKeys.map((x) => (
-            <Boxes x={x} containers={containers} key={x} />
-          ))}
-        </main>
-      </DragDropContext>
-      {onDoneBtnShow(talkId) && doneBtn(doneBtnActive)}
-      {talkId === 2 && (
-        <div className="absolute top-0 right-0 z-30 h-full w-full">
-          <div className="absolute right-[45vh] bottom-[15vh]  ">
-            <div className="arrow h-[26vh] rotate-[135deg]" />
+    <>
+      <div className="relative mx-auto" id="backlog1">
+        <DragDropContext onDragEnd={onDragEnd}>
+          <main className="flex h-[500px] justify-center">
+            {/* 外盒們 */}
+            {boxKeys.map((x) => (
+              <Boxes x={x} containers={containers} key={x} />
+            ))}
+          </main>
+        </DragDropContext>
+        {talkId === 2 && (
+          <div className="absolute top-0 right-0 z-30 h-full w-full">
+            <div className="absolute right-[45vh] bottom-[15vh]  ">
+              <div className="arrow h-[26vh] rotate-[135deg]" />
+            </div>
           </div>
-        </div>
+        )}
+      </div>
+      {onDoneBtnShow(talkId) && (
+        <TextBtn str="我完成了" onClick={handleCheckCorrection} active={doneBtnActive} />
       )}
-    </div>
+    </>
   );
 };
 

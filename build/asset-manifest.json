@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/the-f2e-2022-week3-dnd-scrum/static/css/main.bfd41a9c.css",
-    "main.js": "/the-f2e-2022-week3-dnd-scrum/static/js/main.48cf8266.js",
+    "main.css": "/the-f2e-2022-week3-dnd-scrum/static/css/main.53456e0d.css",
+    "main.js": "/the-f2e-2022-week3-dnd-scrum/static/js/main.1155f26a.js",
     "static/media/bg_village2.png": "/the-f2e-2022-week3-dnd-scrum/static/media/bg_village2.6705c0de2e7b60a9db3d.png",
     "static/media/logo_txt.png": "/the-f2e-2022-week3-dnd-scrum/static/media/logo_txt.6bfee4824abe58589805.png",
     "static/media/logo.png": "/the-f2e-2022-week3-dnd-scrum/static/media/logo.26c36dcbfefda0e77d2e.png",
@@ -25,6 +25,7 @@
     "static/media/role_team2_light.png": "/the-f2e-2022-week3-dnd-scrum/static/media/role_team2_light.a3d899c12b60fa0cd8af.png",
     "static/media/role_mm_light.png": "/the-f2e-2022-week3-dnd-scrum/static/media/role_mm_light.8323327eb9b506cc769a.png",
     "static/media/bg_leafTint_1_lt.png": "/the-f2e-2022-week3-dnd-scrum/static/media/bg_leafTint_1_lt.dddba97eca5714528b60.png",
+    "static/media/loading.gif": "/the-f2e-2022-week3-dnd-scrum/static/media/loading.1971fc68f9b5c2b64961.gif",
     "static/media/planning_point.png": "/the-f2e-2022-week3-dnd-scrum/static/media/planning_point.86846e12f3ac6f5b798d.png",
     "static/media/bg_leafTint_3_t.png": "/the-f2e-2022-week3-dnd-scrum/static/media/bg_leafTint_3_t.739a17693abcaeb0adcf.png",
     "static/media/sprintPlan.png": "/the-f2e-2022-week3-dnd-scrum/static/media/sprintPlan.c4f5f60e3f6f1f658e0b.png",
@@ -48,11 +49,11 @@
     "static/media/story.png": "/the-f2e-2022-week3-dnd-scrum/static/media/story.3b05de46fa744e0a52dc.png",
     "static/media/story_13.png": "/the-f2e-2022-week3-dnd-scrum/static/media/story_13.5248a2b39418f835ff07.png",
     "index.html": "/the-f2e-2022-week3-dnd-scrum/index.html",
-    "main.bfd41a9c.css.map": "/the-f2e-2022-week3-dnd-scrum/static/css/main.bfd41a9c.css.map",
-    "main.48cf8266.js.map": "/the-f2e-2022-week3-dnd-scrum/static/js/main.48cf8266.js.map"
+    "main.53456e0d.css.map": "/the-f2e-2022-week3-dnd-scrum/static/css/main.53456e0d.css.map",
+    "main.1155f26a.js.map": "/the-f2e-2022-week3-dnd-scrum/static/js/main.1155f26a.js.map"
   },
   "entrypoints": [
-    "static/css/main.bfd41a9c.css",
-    "static/js/main.48cf8266.js"
+    "static/css/main.53456e0d.css",
+    "static/js/main.1155f26a.js"
   ]
 }

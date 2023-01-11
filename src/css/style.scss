@@ -414,7 +414,7 @@ body {
     background: rgba(0, 255, 224, 0.3);
     backdrop-filter: blur(5px);
 
-
+    animation: holeShow 1s;
 
     &::after {
       content: '';
@@ -449,7 +449,7 @@ body {
 
     background: rgba(255, 0, 245, 0.35);
     backdrop-filter: blur(5px);
-
+    animation: holeShow 1s;
 
 
     &::after {

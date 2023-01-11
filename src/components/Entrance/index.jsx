@@ -76,7 +76,6 @@ const Entrance = (props) => {
       window.addEventListener('load', onPageLoad);
       return () => window.removeEventListener('load', onPageLoad);
     }
-    return null;
   }, []);
 
   return (

@@ -4,7 +4,7 @@
   .orange-backlog {
     position: relative;
     width: 360px;
-    max-height: 450px;
+    height: 450px;
     border-radius: 20px;
     margin-right: 10px;
 
@@ -15,7 +15,7 @@
       top: 12px;
       left: 12px;
       width: 360px;
-      max-height: 450px;
+      height: 450px;
 
 
       border-radius: 20px;
@@ -43,19 +43,18 @@
       z-index: 2;
       position: absolute;
       width: 360px;
-      max-height: 450px;
+      height: 450px;
       border-radius: 20px;
       top: 0;
 
       .item-container {
         height: 46vh;
-        // z-index: -1;
         width: 320px;
 
         position: absolute;
 
         .item-box {
-          // z-index: -1;
+
           border-radius: 20px;
           height: 70px;
           margin: 10px;
@@ -67,6 +66,7 @@
       z-index: 1;
       position: absolute;
       width: 360px;
+      height: 100%;
       max-height: 450px;
 
       backdrop-filter: blur(5px);
@@ -80,7 +80,8 @@
         content: '';
         position: absolute;
         width: 360px;
-        max-height: 450px;
+
+        height: 450px;
         opacity: 0.9;
       }
     }
@@ -88,8 +89,6 @@
 
   // green backlog color
   .green-backlog {
-    // z-index: 10;
-
     &::after {
       background-color: rgba(0, 255, 224, 0.2);
     }
@@ -158,7 +157,7 @@
     .backlog-bar {
       width: 100%;
       height: 30px;
-      bottom: 10px;
+      bottom: 90px;
       right: 0;
       left: 0;
       border-radius: 20px;

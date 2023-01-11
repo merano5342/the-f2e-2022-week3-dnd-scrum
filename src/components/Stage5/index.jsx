@@ -38,7 +38,7 @@ const Stage5 = (props) => {
         />
       </div>
       {talkId === 1 && <RetroRadio talkId={talkId} setTalkId={setTalkId} />}
-      {talkId === 2 && <TextBtn str="繼續" onClick={() => setPage((pre) => pre + 1)} />}
+      {talkId === 2 && <TextBtn str="畢業啦！" onClick={() => setPage((pre) => pre + 1)} />}
     </div>
   );
 };
