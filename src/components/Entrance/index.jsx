@@ -65,6 +65,7 @@ const Entrance = (props) => {
   const [enter, setEnter] = useState(false);
   const [playAnimation, setPlayAnimation] = useState(true);
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const onPageLoad = () => {
       setPlayAnimation(false);
