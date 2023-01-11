@@ -53,3 +53,14 @@
  .leaf2 {
    animation: tilt-n-move-shaking 2s 1s ease-in-out infinite;
  }
+
+
+
+ .loading {
+   height: 100%;
+   width: 100%;
+   background-color: #00FFE0;
+   z-index: 1;
+   box-shadow: inset 10px 10px 200px 100px #00a4a4;
+
+ }

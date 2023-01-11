@@ -10,46 +10,22 @@ import LeafDark1 from '../../assets/bg/bg_leafDark_1_l.png';
 import LeafDark2 from '../../assets/bg/bg_leafDark_2_b.png';
 import LeafDark3 from '../../assets/bg/bg_leafDark_3_r.png';
 import LeafDark4 from '../../assets/bg/bg_leafDark_4_t.png';
+import loadingGif from '../../assets/loading.gif';
 
 // eslint-disable-next-line no-unused-vars
 import style from './Entrance.scss';
 
-const Entrance = (props) => {
-  const { setPage } = props;
-  const [enter, setEnter] = useState(false);
-
-  useEffect(() => {
-    const imageList = [
-      BigLogo,
-      LeafTint1,
-      LeafTint1,
-      LeafTint2,
-      LeafTint3,
-      LeafTint4,
-      LeafDark1,
-      LeafDark2,
-      LeafDark3,
-      LeafDark4,
-    ];
-    imageList.forEach((image) => {
-      new Image().src = image;
-    });
-  }, []);
-
-  const Landings = (
-    <div className="relative z-20 ">
-      <div className=" flex flex-col items-center justify-center">
-        <img src={BigLogo} alt="" className="logo z-20 max-h-[80vh]" />
-        <h2 className="relative top-[-70px] z-20 text-center text-3xl text-white">
-          深入敏捷の村一探究竟
-        </h2>
-        <button className="btn relative top-[-40px] z-20" onClick={() => setEnter(true)}>
-          進入村莊
-        </button>
-      </div>
+const LoadingAnimate = () => {
+  return (
+    <div className="loading relative z-30 flex h-full items-center justify-center ">
+      <img src={loadingGif} className=" mb-12 h-[160px]" alt="" />
     </div>
   );
-  const Intro = (
+};
+
+const Intro = (props) => {
+  const { setPage } = props;
+  return (
     <div className="dialog-po relative z-20 flex flex-col items-center">
       <div className="talk-nobody talk mx-10 mt-[20vh] mb-10">
         <h3 className="talk-title">（謎之音）</h3>
@@ -66,10 +42,48 @@ const Entrance = (props) => {
       </button>
     </div>
   );
+};
+
+const Landings = (props) => {
+  const { setEnter } = props;
+  return (
+    <div className="relative z-20 ">
+      <div className=" flex flex-col items-center justify-center">
+        <img src={BigLogo} alt="" className="logo z-20 max-h-[80vh]" />
+        <h2 className="relative top-[-70px] z-20 text-center text-3xl text-white">
+          深入敏捷の村一探究竟
+        </h2>
+        <button className="btn relative top-[-40px] z-20" onClick={() => setEnter(true)}>
+          進入村莊
+        </button>
+      </div>
+    </div>
+  );
+};
+const Entrance = (props) => {
+  const { setPage } = props;
+  const [enter, setEnter] = useState(false);
+  const [playAnimation, setPlayAnimation] = useState(true);
+
+  useEffect(() => {
+    const onPageLoad = () => {
+      setPlayAnimation(false);
+    };
+
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
+
   return (
     <div className="background">
       <div className="entrance">
-        {enter ? Intro : Landings}
+        {playAnimation && <LoadingAnimate />}
+        {/* <LoadingAnimate /> */}
+        {enter ? <Intro setPage={setPage} /> : <Landings setEnter={setEnter} />}
         <div className="z-0 h-full">
           <img
             src={LeafDark1}
@@ -83,6 +97,7 @@ const Entrance = (props) => {
             className="leaf1 absolute right-[-5px] top-[-5px]"
           />
           <img src={LeafDark4} alt="" className="leaf2 absolute top-[-5px] " />
+
           {!enter && (
             <div className="">
               <img

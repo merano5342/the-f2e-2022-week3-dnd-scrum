@@ -136,7 +136,6 @@ const CharacterTalk = (props) => {
         {isCharaTaking('mm') && talkBox}
         {mmCharacter()}
       </div>
-      {/* </div> */}
     </div>
   );
 };
